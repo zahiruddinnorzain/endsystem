@@ -1,9 +1,21 @@
-## step 1
+
+# Show End-System notification
+
+Set an expiration date for the system.
+
+## Step 1
 ```
 composer require Zahiruddinnorzain\Endsystem
 ```
 
-## step 2
+## Step 2
+
+Run this command
+
+```
+php artisan make:middleware CheckSystem
+```
+
 put this in middleware
 
 ```
@@ -11,7 +23,7 @@ use DateTime;
 use Zahiruddinnorzain\Endsystem\EndSystemServiceProvider;
 ```
 ```
-$hari = 29;
+$hari = 20;
 $bulan = 3;
 $tahun = 2024;
 $name = "admin";
@@ -29,3 +41,21 @@ if ( ($today > $givenDate) && ($status_pay == false) ) {
     return $next($request);
 }
 ```
+## Step 3
+put this in web.php route file
+
+```
+use App\Http\Middleware\CheckSystem;
+
+Route::middleware([CheckSystem::class])->group(function () {
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+});
+
+```
+## Preview
+
+![alt text](image.png)
