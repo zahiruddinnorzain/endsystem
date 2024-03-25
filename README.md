@@ -5,7 +5,7 @@ Set an expiration date for the system.
 
 ## Step 1
 ```
-composer require Zahiruddinnorzain\Endsystem
+composer require zahiruddinnorzain/endsystem
 ```
 
 ## Step 2
