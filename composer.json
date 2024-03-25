@@ -11,7 +11,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Zahiruddinnorzain\\Endsystem\\EndsystemServiceProvider"
+                "Zahiruddinnorzain\\Endsystem\\EndSystemServiceProvider"
             ]
         }
     }
